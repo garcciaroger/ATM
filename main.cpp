@@ -7,9 +7,11 @@ int main() {
     bool isValid;
 
     do {
+        //Declaring an object from the account class
         Account Checkings;
         Account Savings;
 
+        //Main menu of the program
         std::cout << " \nWelcome to ATM Simulator   " << std::endl;
         std::cout << "==============================" << std::endl;
         while (true) {
@@ -18,13 +20,15 @@ int main() {
             std::cout << "3. View Balance" << std::endl;
             std::cout << "4. Exit" << std::endl;
             std::cout << "=============================" << std::endl;
-
             int option = 0;
             std::cout << "Enter Option: "; std::cin >> option;
 
+            //Main menu switch case option
             switch (option) {
+                //Deposit case
                 case 1: {
                     int accountOption = 0;
+                    //Menu options for selecting which account to deposit to
                     std::cout << "\nSelect Account to Deposit" << std::endl;
                     std::cout << "===========================" << std::endl;
                     std::cout << "1. Checkings " << std::endl;
@@ -33,9 +37,12 @@ int main() {
                     std::cout << "Enter Option: ";
                     std::cin >> accountOption;
 
+                    //Switch case for deposit amount
                     switch (accountOption) {
+                        //Case to deposit to checkings account
                         case 1: {
                             do {
+                                //User enters amount to deposit and set to .deposit function
                                 std::cout << "Enter Deposit Amount - $";
                                 std::cin >> deposit_amount;
                                 isValid = Checkings.deposit(deposit_amount);
@@ -45,8 +52,10 @@ int main() {
                             } while (!isValid);
                             break;
                         }
+                        //Case to deposit to savings account
                         case 2: {
                             do {
+                                //User enters amount to deposit and set to .deposit function
                                 std::cout << "Enter Deposit Amount - $";
                                 std::cin >> deposit_amount;
                                 isValid = Savings.deposit(deposit_amount);
@@ -59,8 +68,10 @@ int main() {
                     }
                     break;
                 }
+                //Withdraw Case
                 case 2: {
                     int accountOption = 0;
+                    //Withdraw menu option
                     std::cout << "\nSelect Account to Withdraw" << std::endl;
                     std::cout << "===========================" << std::endl;
                     std::cout << "1. Checkings " << std::endl;
@@ -68,7 +79,7 @@ int main() {
                     std::cout << "===========================" << std::endl;
                     std::cout << "Enter Option: ";
                     std::cin >> accountOption;
-
+                    //Switch case for withdraw options
                     switch (accountOption) {
                         case 1: {
                             double withdrawAmount;
@@ -101,6 +112,7 @@ int main() {
                     }
                     break;
                 }
+                //View Balance Case
                 case 3: {
                     int option = 0;
                     std::cout << "\n Select Account    " << std::endl;
@@ -127,6 +139,7 @@ int main() {
                     }
                     break;
                 }
+                //Exit from the program case
                 case 4: {
                     // Exit from the program
                     return 0;
@@ -138,7 +151,7 @@ int main() {
             }
 
             // Prompt user to continue or exit
-            std::cout << "Do you want to perform another transaction? (y/n): ";
+            std::cout << "\nDo you want to perform another transaction? (y/n): ";
             std::cin >> choice;
             if (choice != 'y' && choice != 'Y') {
                 break; // Exit loop if user chooses not to continue
