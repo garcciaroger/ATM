@@ -1,5 +1,7 @@
 #pragma once
 #include<iostream>
+#include<sstream>
+#include<cctype>
 #include <stdexcept>
 class Account{
 private:
@@ -23,9 +25,14 @@ public:
             std::cerr << "ERROR: Account number cannot be empty" << std::endl;
             return false;
         }
+        //Checks to see that the exact length of account number is 12
+        if(new_account_number.length() != 12){
+            std::cerr << "ERROR: Account number must be exactly 12 digits" << std::endl;
+            return false;
+        }
         //This function checks account number for any invalid data
         for(char c: new_account_number){
-            if(!std::isdigit(c) && !std::isalpha(c)){
+            if(!std::isdigit(c)){
                 std::cerr << "ERROR: Invalid character in account number. " << std::endl;
                 return false; 
             }
@@ -37,9 +44,26 @@ public:
     bool set_balance(double new_balance){
         //The set_balance function sets the balance and validates input
         //This function ensures that the balance does not have a negative value
-        if(new_balance < 0){
+        if(new_balance <= 0){
             std::cerr << "ERROR: Balance Negative! " << std::endl; 
             return false;
+        }
+        // Convert the double value to a string
+        std::string convert_new_balance_to_decimal = std::to_string(new_balance);
+        // Check if each character in the string is a digit or a decimal point
+        bool has_decimal_point = false;
+        for (char c : convert_new_balance_to_decimal) {
+            if (!std::isdigit(c) && c != '.') {
+                std::cerr << "ERROR: Invalid character in balance!" << std::endl;
+                return false;
+            }
+            if (c == '.') {
+                if (has_decimal_point) {
+                    std::cerr << "ERROR: Multiple decimal points in balance!" << std::endl;
+                    return false;
+                }
+                has_decimal_point = true;
+            }
         }
         //Converts balance to string to test out that there is only integers
         std::string balance_str = std::to_string(new_balance);
@@ -49,6 +73,8 @@ public:
                 return false;
             }
         }
+        //This limits the decmial count to only two
+        new_balance = std::round(new_balance * 100.0)/100.0;
         //If test cases are successful balace is set and returns true
         balance = new_balance;
         return true;
