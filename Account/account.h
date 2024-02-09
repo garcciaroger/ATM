@@ -41,18 +41,22 @@ public:
         account_number = new_account_number;
         return true;
     }
-    bool set_balance(double new_balance){
-        //The set_balance function sets the balance and validates input
-        //This function ensures that the balance does not have a negative value
-        if(new_balance <= 0){
-            std::cerr << "ERROR: Balance Negative! " << std::endl; 
+    bool set_balance(double new_balance) {
+        // Ensure the balance is not negative
+        if (new_balance <= 0) {
+            std::cerr << "ERROR: Balance cannot be negative!" << std::endl;
             return false;
         }
-        // Convert the double value to a string
-        std::string convert_new_balance_to_decimal = std::to_string(new_balance);
+
+        // Round the balance to two decimal places
+        new_balance = std::round(new_balance * 100.0) / 100.0;
+
+        // Convert the rounded balance to a string
+        std::string balance_str = std::to_string(new_balance);
+
         // Check if each character in the string is a digit or a decimal point
         bool has_decimal_point = false;
-        for (char c : convert_new_balance_to_decimal) {
+        for (char c : balance_str) {
             if (!std::isdigit(c) && c != '.') {
                 std::cerr << "ERROR: Invalid character in balance!" << std::endl;
                 return false;
@@ -65,20 +69,18 @@ public:
                 has_decimal_point = true;
             }
         }
-        //Converts balance to string to test out that there is only integers
-        std::string balance_str = std::to_string(new_balance);
-        for(char c : balance_str){
-            if(!std::isdigit(c)){
-                std::cerr << "ERROR: Invalid character in balance! " << std::endl;
-                return false;
-            }
+
+        // Check if exactly one decimal point is present
+        if (!has_decimal_point) {
+            std::cerr << "ERROR: No decimal point in balance!" << std::endl;
+            return false;
         }
-        //This limits the decmial count to only two
-        new_balance = std::round(new_balance * 100.0)/100.0;
-        //If test cases are successful balace is set and returns true
+
+        // Set the balance
         balance = new_balance;
         return true;
     }
+
     //Default Initilization
     Account():account_number("N/A"), balance(0.0){}
     //Methods
