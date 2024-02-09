@@ -1,0 +1,5 @@
+if(EXISTS "/Users/rogergarcia/ATM/Account/test/build/test_executable[1]_tests.cmake")
+  include("/Users/rogergarcia/ATM/Account/test/build/test_executable[1]_tests.cmake")
+else()
+  add_test(test_executable_NOT_BUILT test_executable_NOT_BUILT)
+endif()
