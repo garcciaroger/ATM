@@ -10,7 +10,6 @@ int main() {
         //Declaring an object from the account class
         Account Checkings;
         Account Savings;
-
         //Main menu of the program
         std::cout << " \nWelcome to ATM Simulator   " << std::endl;
         std::cout << "==============================" << std::endl;
