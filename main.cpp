@@ -2,7 +2,7 @@
 #include"Account/account.h"
 #include"AccountOwner/owner.h"
 
-bool loggin_page();
+bool loggin_menu();
 
 int main() {
     char choice;
@@ -163,3 +163,17 @@ int main() {
     return 0;
 }
 
+bool loggin_menu(){
+    int option = 0;
+    std::cout << "      Menu Option    " << std::endl;
+    std::cout << "=====================" << std::endl;
+    std::cout << "1. Create New Account" << std::endl;
+    std::cout << "2. Log In" << std::endl;
+    std::cout << "3. Exit" << std::endl;
+    std::cout << "=====================" << std::endl;
+    std::cout << "Option: "; std::cin >> option;
+
+    
+
+
+}
