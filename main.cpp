@@ -1,5 +1,8 @@
 #include<iostream>
 #include"Account/account.h"
+#include"AccountOwner/owner.h"
+
+bool loggin_page();
 
 int main() {
     char choice;
@@ -159,3 +162,4 @@ int main() {
     } while (choice == 'y' || choice == 'Y');
     return 0;
 }
+
