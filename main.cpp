@@ -173,7 +173,15 @@ bool loggin_menu(){
     std::cout << "=====================" << std::endl;
     std::cout << "Option: "; std::cin >> option;
 
-    
+    switch(option){
+        case 1:{
 
+        }
+        case 2:{
 
+        }
+        case 3:{
+            exit(0);
+        }
+    }
 }
