@@ -1,8 +1,9 @@
 #include<iostream>
 #include"Account/account.h"
 #include"AccountOwner/owner.h"
+#include"Login/login.h"
 
-bool loggin_menu();
+void loggin_menu();
 
 int main() {
     char choice;
@@ -163,7 +164,7 @@ int main() {
     return 0;
 }
 
-bool loggin_menu(){
+void loggin_menu(){
     int option = 0;
     std::cout << "      Menu Option    " << std::endl;
     std::cout << "=====================" << std::endl;
@@ -173,9 +174,29 @@ bool loggin_menu(){
     std::cout << "=====================" << std::endl;
     std::cout << "Option: "; std::cin >> option;
 
+    AccountOwner newHolder;
+
     switch(option){
         case 1:{
+            newHolder.gather_customer_information();
+            std::cout << "\nUsername Requirements " << std::endl;
+            std::cout << "========================" << std::endl;
+            std::cout << "1. 8 Characters " << std::endl;
+            std::cout << "2. 2 Special Character " << std::endl;
+            std::cout << "3. 2 Numbers " << std::endl;
+            std::cout << "4. No White Spaces" << std::endl;
+            
+            AccountInformation newAccount;
 
+            std::string username;
+            std::cin>> username;
+            bool isValid = true;
+
+            if (newAccount.set_username(username)) {
+                std::cout << "Username is valid." << std::endl;
+            } else {
+                std::cout << "Invalid username. Please try again." << std::endl;
+            }
         }
         case 2:{
 
