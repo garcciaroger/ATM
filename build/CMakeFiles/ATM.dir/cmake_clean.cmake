@@ -3,6 +3,10 @@ file(REMOVE_RECURSE
   "ATM.pdb"
   "CMakeFiles/ATM.dir/Account/account.cpp.o"
   "CMakeFiles/ATM.dir/Account/account.cpp.o.d"
+  "CMakeFiles/ATM.dir/AccountOwner/owner.cpp.o"
+  "CMakeFiles/ATM.dir/AccountOwner/owner.cpp.o.d"
+  "CMakeFiles/ATM.dir/Login/login.cpp.o"
+  "CMakeFiles/ATM.dir/Login/login.cpp.o.d"
   "CMakeFiles/ATM.dir/main.cpp.o"
   "CMakeFiles/ATM.dir/main.cpp.o.d"
 )

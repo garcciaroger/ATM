@@ -127,8 +127,9 @@ public:
     //Initlizers
     AccountInformation():username("N/A"),password("N/A"),PIN("N/A"){}
     //Method
+    bool validate_username(std::string username_entry);
+    bool validate_password(std::string password_entry);
     void rest_username();
     void rest_password();
     void rest_pin();
-
 };

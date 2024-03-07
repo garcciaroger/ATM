@@ -1,4 +1,6 @@
-CMakeFiles/ATM.dir/main.cpp.o: /Users/rogergarcia/Desktop/ATM/main.cpp \
+CMakeFiles/ATM.dir/Login/login.cpp.o: \
+  /Users/rogergarcia/Desktop/ATM/Login/login.cpp \
+  /Users/rogergarcia/Desktop/ATM/Login/login.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/__assert \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/__config \
@@ -789,8 +791,4 @@ CMakeFiles/ATM.dir/main.cpp.o: /Users/rogergarcia/Desktop/ATM/main.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk/usr/include/sys/_types/_fsfilcnt_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk/usr/include/_types/_nl_item.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/__bsd_locale_defaults.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/cstdarg \
-  /Users/rogergarcia/Desktop/ATM/Account/account.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/sstream \
-  /Users/rogergarcia/Desktop/ATM/AccountOwner/owner.h \
-  /Users/rogergarcia/Desktop/ATM/Login/login.h
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/cstdarg

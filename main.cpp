@@ -6,6 +6,8 @@
 void loggin_menu();
 
 int main() {
+    loggin_menu();
+
     char choice;
     double deposit_amount = 0; // Move the initialization outside the switch statement
     bool isValid;
@@ -170,38 +172,106 @@ void loggin_menu(){
     std::cout << "=====================" << std::endl;
     std::cout << "1. Create New Account" << std::endl;
     std::cout << "2. Log In" << std::endl;
-    std::cout << "3. Exit" << std::endl;
+    std::cout << "3. Rest Username and Password " << std::endl;
+    std::cout << "4. Exit" << std::endl;
     std::cout << "=====================" << std::endl;
     std::cout << "Option: "; std::cin >> option;
 
     AccountOwner newHolder;
+    AccountInformation newAccount;
 
     switch(option){
         case 1:{
             newHolder.gather_customer_information();
+            //Username Requirements
             std::cout << "\nUsername Requirements " << std::endl;
             std::cout << "========================" << std::endl;
             std::cout << "1. 8 Characters " << std::endl;
             std::cout << "2. 2 Special Character " << std::endl;
             std::cout << "3. 2 Numbers " << std::endl;
             std::cout << "4. No White Spaces" << std::endl;
-            
-            AccountInformation newAccount;
-
             std::string username;
             std::cin>> username;
-            bool isValid = true;
 
-            if (newAccount.set_username(username)) {
-                std::cout << "Username is valid." << std::endl;
-            } else {
-                std::cout << "Invalid username. Please try again." << std::endl;
+            //This gets the user to create thier username and 
+            //validate the username using .set_username
+            bool usernameIsValid = newAccount.set_username(username);
+            while(!usernameIsValid == false){
+                std::cout << "Username is invalid please enter again." << std::endl;
+                std::cin >> username;
+                usernameIsValid = newAccount.set_username(username);
+            } 
+
+            //Password Requirements
+            std::cout << "\nUsername Requirements " << std::endl;
+            std::cout << "========================" << std::endl;
+            std::cout << "1. 8 Characters " << std::endl;
+            std::cout << "2. 2 Special Character " << std::endl;
+            std::cout << "3. 2 Numbers " << std::endl;
+            std::cout << "4. No White Spaces" << std::endl;
+            std::string password;
+            std::cin >> password;
+
+            //This function is similar to validating and creating
+            //the password
+            bool passwordIsValid = newAccount.set_password(password);
+            while(!passwordIsValid == false){
+                std::cout << "Username is invalid please enter again." << std::endl;
+                std::cin >> password;
+                passwordIsValid = newAccount.set_username(password);
+            } 
+
+            //PIN Requirements
+            std::cout << "    Pin Requirements    " << std::endl;
+            std::cout << "========================" << std::endl;
+            std::cout << "1. PIN must be 4 Digits " << std::endl;
+            std::cout << "2. No White Spaces "      << std::endl;
+            std::cout << "3. No other characters  " << std::endl;
+            std::string PIN;
+            std::cin >> PIN;
+
+            //Code validates that the PIN is valid and correct
+            bool PINisValid = newAccount.set_PIN(PIN);
+            while(!PINisValid == false){
+                std::cout << "PIN is Invalid. Please enter again." << std::endl;
+                std::cin >> PIN;
+                PINisValid = newAccount.set_PIN(PIN);
             }
+
+            //Account Created and returns user login page
+            loggin_menu();
+            break;
         }
         case 2:{
+            std::string username_entry;
+            std::string password_entry;
+            bool usernameValid = false;
+            bool passwordValid = false;
 
+            while(!usernameValid || !passwordValid){
+                std::cout << "   Log In   " << std::endl;
+                std::cout << "============" << std::endl;
+                std::cout << "Username: "; std::cin >> username_entry;
+                std::cout << "Password: "; std::cin >> password_entry;
+
+                usernameValid = newAccount.validate_username(username_entry);
+                passwordValid = newAccount.validate_password(password_entry);
+
+                if(!usernameValid){
+                    std::cout << "Incorrect Username. Try Again" << std::endl;
+                }
+                if(!passwordValid){
+                    std::cout << "Incorrect Password. Try Again" << std::endl;
+                }
+            }
+            std::cout << "Login Successful" << std::endl;
+            main();
+            break;
         }
         case 3:{
+            //REST USERNAME AND PASSWORD
+        }
+        case 4:{
             exit(0);
         }
     }

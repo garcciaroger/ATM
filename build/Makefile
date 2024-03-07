@@ -57,10 +57,10 @@ RM = /Applications/CMake.app/Contents/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/rogergarcia/ATM
+CMAKE_SOURCE_DIR = /Users/rogergarcia/Desktop/ATM
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/rogergarcia/ATM/build
+CMAKE_BINARY_DIR = /Users/rogergarcia/Desktop/ATM/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/rogergarcia/ATM/build/CMakeFiles /Users/rogergarcia/ATM/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/rogergarcia/Desktop/ATM/build/CMakeFiles /Users/rogergarcia/Desktop/ATM/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/rogergarcia/ATM/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/rogergarcia/Desktop/ATM/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -153,6 +153,54 @@ Account/account.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ATM.dir/build.make CMakeFiles/ATM.dir/Account/account.cpp.s
 .PHONY : Account/account.cpp.s
 
+AccountOwner/owner.o: AccountOwner/owner.cpp.o
+.PHONY : AccountOwner/owner.o
+
+# target to build an object file
+AccountOwner/owner.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ATM.dir/build.make CMakeFiles/ATM.dir/AccountOwner/owner.cpp.o
+.PHONY : AccountOwner/owner.cpp.o
+
+AccountOwner/owner.i: AccountOwner/owner.cpp.i
+.PHONY : AccountOwner/owner.i
+
+# target to preprocess a source file
+AccountOwner/owner.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ATM.dir/build.make CMakeFiles/ATM.dir/AccountOwner/owner.cpp.i
+.PHONY : AccountOwner/owner.cpp.i
+
+AccountOwner/owner.s: AccountOwner/owner.cpp.s
+.PHONY : AccountOwner/owner.s
+
+# target to generate assembly for a file
+AccountOwner/owner.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ATM.dir/build.make CMakeFiles/ATM.dir/AccountOwner/owner.cpp.s
+.PHONY : AccountOwner/owner.cpp.s
+
+Login/login.o: Login/login.cpp.o
+.PHONY : Login/login.o
+
+# target to build an object file
+Login/login.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ATM.dir/build.make CMakeFiles/ATM.dir/Login/login.cpp.o
+.PHONY : Login/login.cpp.o
+
+Login/login.i: Login/login.cpp.i
+.PHONY : Login/login.i
+
+# target to preprocess a source file
+Login/login.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ATM.dir/build.make CMakeFiles/ATM.dir/Login/login.cpp.i
+.PHONY : Login/login.cpp.i
+
+Login/login.s: Login/login.cpp.s
+.PHONY : Login/login.s
+
+# target to generate assembly for a file
+Login/login.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ATM.dir/build.make CMakeFiles/ATM.dir/Login/login.cpp.s
+.PHONY : Login/login.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -189,6 +237,12 @@ help:
 	@echo "... Account/account.o"
 	@echo "... Account/account.i"
 	@echo "... Account/account.s"
+	@echo "... AccountOwner/owner.o"
+	@echo "... AccountOwner/owner.i"
+	@echo "... AccountOwner/owner.s"
+	@echo "... Login/login.o"
+	@echo "... Login/login.i"
+	@echo "... Login/login.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

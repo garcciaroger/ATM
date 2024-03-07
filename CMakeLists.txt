@@ -4,4 +4,4 @@ project(ATM)  # Change "ATM" to your project name
 set(CMAKE_CXX_STANDARD 17)  # Set the C++ standard to use
 
 # Add the source files for your project (main.cpp and account.cpp)
-add_executable(ATM main.cpp Account/account.cpp)  # Adjust paths as necessary
+add_executable(ATM main.cpp Account/account.cpp AccountOwner/owner.cpp Login/login.cpp)  # Adjust paths as necessary

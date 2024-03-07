@@ -172,4 +172,5 @@ public:
 
     //Method
     bool gather_customer_information();
+   
 };

@@ -62,10 +62,6 @@ bool AccountOwner::gather_customer_information(){
     }
 
     std::cout << std::endl;
-
-
-
-
-
     return true; // Gathering successful
 }
+
