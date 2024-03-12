@@ -276,38 +276,13 @@ void loggin_menu(){
             std::cout << "Enter Account Number: "; std::cin >> userAccountNumber;
             std::cout << std::endl;
 
-            bool userAccountValid = restAccount.reset_usernameAndPassword(userAccountNumber);
+            bool userAccountValid = restAccount.rest_usernameAndPassword(userAccountNumber);
             while(!userAccountValid) { // Ensure proper updating of the userAccountValid flag
                 std::cout << "Account Number is incorrect. Please Re-enter: ";
                 std::cin >> userAccountNumber;
-                userAccountValid = restAccount.reset_usernameAndPassword(userAccountNumber); // Update flag
+                userAccountValid = restAccount.rest_usernameAndPassword(userAccountNumber); // Update flag
             }
-            
-            char choice;
-            std::string username_entry, password_entry;
-            std::cout << "Would you like to reset PIN? (Y/N): ";
-            std::cin >> choice;
-            if(choice == 'Y' || choice == 'y') {
-                std::cout << "Enter Username: "; std::cin >> username_entry;
-                std::cout << "Enter Password: "; std::cin >> password_entry;
-                std::cout << "Enter Account Number: "; std::cin >> userAccountNumber;
-
-                // Assuming 'username', 'password', and 'PIN' are defined and accessible here
-                // This loop will not work as intended without defining 'username', 'password', 'user_PIN', and 'PIN'
-                while(username_entry != username || password_entry != password /* || userAccountNumber != expectedAccountNumber || user_PIN != PIN*/) {
-                    std::cout << "Invalid credentials. Please enter again." << std::endl;
-                    std::cout << "========================================" << std::endl;
-                    std::cout << "Enter Username: "; std::cin >> username_entry;
-                    std::cout << "Enter Password: "; std::cin >> password_entry;
-                    std::cout << "Enter Account Number: "; std::cin >> userAccountNumber;
-                }
-                
-                std::string new_pin;
-                std::cout << "Enter new PIN: "; std::cin >> new_pin;
-                restAccount.reset_PIN(new_pin); // Assuming this method exists and is correctly implemented
-            } else {
-                break;
-            }
+            break;
         }
 
         case 4:{

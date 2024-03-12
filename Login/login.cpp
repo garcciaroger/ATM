@@ -1,5 +1,5 @@
 #include"login.h"
-#include"Account/account.h"
+#include "account.h"
 
 bool AccountInformation::validate_username(std::string username_entry){
     if(username_entry != username){
@@ -16,7 +16,7 @@ bool AccountInformation::validate_password(std::string password_entry){
 }
 
 bool AccountInformation::rest_usernameAndPassword(std::string userEntry_accountNumber){
-    if(userEntry_accountNumber != account_number){
+    if(userEntry_accountNumber != get_account_number()){
         return false;
     }
     std::string newUsername;
@@ -32,7 +32,7 @@ bool AccountInformation::rest_pin(std::string username_entry, std::string passwo
         return false;
     }
     std::string new_pin;
-    std::cout "Enter a new PIN: "; std::cin >> new_pin;
+    std::cout << "Enter a new PIN: "; std::cin >> new_pin;
     set_PIN(new_pin);
     return true;
 }

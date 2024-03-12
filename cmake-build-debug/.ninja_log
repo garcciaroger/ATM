@@ -1,0 +1,8 @@
+# ninja log v5
+0	6	0	clean	f1c0810b4f0350db
+6	557	7319848731261628	CMakeFiles/ATM.dir/AccountOwner/owner.cpp.obj	4c72c7f1fba8441a
+2	610	7319848731786631	CMakeFiles/ATM.dir/Account/account.cpp.obj	11215c91ac17815a
+1	85	7319853519176075	build.ninja	a0cd03107a61e226
+6	521	7319849887007072	CMakeFiles/ATM.dir/Login/login.cpp.obj	991e5e688d4d3a71
+2	405	7319859426949524	CMakeFiles/ATM.dir/main.cpp.obj	e4c6feb4a0595699
+405	510	7319859427980431	ATM.exe	b41357d5227bb99f
