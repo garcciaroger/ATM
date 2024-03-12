@@ -77,6 +77,13 @@ build CMakeFiles/ATM.dir/Login/login.cpp.obj: CXX_COMPILER__ATM_Debug C$:/Users/
   OBJECT_DIR = CMakeFiles\ATM.dir
   OBJECT_FILE_DIR = CMakeFiles\ATM.dir\Login
 
+build CMakeFiles/ATM.dir/ProfileManager/ProfileManager.cpp.obj: CXX_COMPILER__ATM_Debug C$:/Users/Roger$ Garcia/Desktop/ATM/ProfileManager/ProfileManager.cpp || cmake_object_order_depends_target_ATM
+  DEP_FILE = CMakeFiles\ATM.dir\ProfileManager\ProfileManager.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++17
+  INCLUDES = -I"C:/Users/Roger Garcia/Desktop/ATM/Account" -I"C:/Users/Roger Garcia/Desktop/ATM/AccountOwner" -I"C:/Users/Roger Garcia/Desktop/ATM/Login"
+  OBJECT_DIR = CMakeFiles\ATM.dir
+  OBJECT_FILE_DIR = CMakeFiles\ATM.dir\ProfileManager
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target ATM
@@ -85,7 +92,7 @@ build CMakeFiles/ATM.dir/Login/login.cpp.obj: CXX_COMPILER__ATM_Debug C$:/Users/
 #############################################
 # Link the executable ATM.exe
 
-build ATM.exe: CXX_EXECUTABLE_LINKER__ATM_Debug CMakeFiles/ATM.dir/main.cpp.obj CMakeFiles/ATM.dir/Account/account.cpp.obj CMakeFiles/ATM.dir/AccountOwner/owner.cpp.obj CMakeFiles/ATM.dir/Login/login.cpp.obj
+build ATM.exe: CXX_EXECUTABLE_LINKER__ATM_Debug CMakeFiles/ATM.dir/main.cpp.obj CMakeFiles/ATM.dir/Account/account.cpp.obj CMakeFiles/ATM.dir/AccountOwner/owner.cpp.obj CMakeFiles/ATM.dir/Login/login.cpp.obj CMakeFiles/ATM.dir/ProfileManager/ProfileManager.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\ATM.dir

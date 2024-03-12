@@ -204,7 +204,7 @@ void loggin_menu(){
             } 
 
             //Password Requirements
-            std::cout << "\nUsername Requirements " << std::endl;
+            std::cout << "\nPassword Requirements " << std::endl;
             std::cout << "========================" << std::endl;
             std::cout << "1. 8 Characters " << std::endl;
             std::cout << "2. 2 Special Character " << std::endl;

@@ -1,5 +1,5 @@
-#include"account.h"
-#include<iostream>
+#include "account.h"
+#include <iostream>
 #include <stdexcept>
 
 //This deposit function allows a deposit amount and returns 
