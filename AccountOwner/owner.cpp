@@ -1,4 +1,6 @@
 #include"owner.h"
+#include<string>
+
 bool AccountOwner::gather_customer_information(){
     std::string first_name;
     std::string last_name;

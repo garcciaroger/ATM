@@ -1,7 +1,8 @@
 #pragma once
 #include<iostream>
+#include"Account/account.h"
 
-class AccountInformation{
+class AccountInformation : public Account{
 private:
     std::string username;
     std::string password;
@@ -130,7 +131,6 @@ public:
     //Method
     bool validate_username(std::string username_entry);
     bool validate_password(std::string password_entry);
-    void rest_username();
-    void rest_password();
-    void rest_pin();
+    bool rest_usernameAndPassword(std::string userEntry_accountNumber);
+    bool rest_pin(std::string username_entry, std::string password_entry, std::string user_PIN);
 };
