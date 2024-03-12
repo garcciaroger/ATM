@@ -123,6 +123,7 @@ public:
             return false;
         }
         PIN = new_PIN;
+        return true;
     }
     //Initlizers
     AccountInformation():username("N/A"),password("N/A"),PIN("N/A"){}
